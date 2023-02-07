@@ -18,12 +18,12 @@ class ProductManager {
 
     async addProduct({ title, description, price, thumbnail, code, stock }) {
         if (
-          this.isEmpty(title) &&
-          this.isEmpty(description) &&
-          this.isEmpty(price) &&
-          this.isEmpty(thumbnail) &&
-          this.isEmpty(code) &&
-          this.isEmpty(stock) &&
+          this.vacio(title) &&
+          this.vacio(description) &&
+          this.vacio(price) &&
+          this.vacio(thumbnail) &&
+          this.vacio(code) &&
+          this.vacio(stock) &&
         ) {
           let elements = await fs.promises.readFile(this.path, "utf-8");
           elements = JSON.parse(elements);
